@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Results</title>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    <h2>Uploaded Image:</h2>
+    <img src="{{ url_for('display_image', filename=filename) }}" alt="Uploaded Image" style="width:300px;">
+    <h2>Predicted Sign using VGG16:</h2>
+    <p>{{ prediction_vgg16 }}</p>
+    <h2>Predicted Sign using ResNet50:</h2>
+    <p>{{ prediction_resnet }}</p>
+    <a href="/">Upload another image</a>
+</body>
+</html>
