@@ -27,7 +27,7 @@ labels = [
 ]
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
