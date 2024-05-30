@@ -2,16 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Prediction Results</title>
+    <title>Hand Gesture Recognition Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f0f8ff, #87cefa);
+            color: #333;
+            font-family: 'Roboto', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .btn-custom {
+            background-color: #1e90ff;
+            border-color: #1e90ff;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #87cefa;
+            border-color: #87cefa;
+        }
+    </style>
 </head>
 <body>
-    <h1>Prediction Results</h1>
-    <h2>Uploaded Image:</h2>
-    <img src="{{ url_for('display_image', filename=filename) }}" alt="Uploaded Image" style="width:300px;">
-    <h2>Predicted Sign using VGG16:</h2>
-    <p>{{ prediction_vgg16 }}</p>
-    <h2>Predicted Sign using ResNet50:</h2>
-    <p>{{ prediction_resnet }}</p>
-    <a href="/">Upload another image</a>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Hand Gesture Recognition Results</h1>
+                <p class="card-text">Here are the predictions for your uploaded image.</p>
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <img src="{{ url_for('display_image', filename=filename) }}" class="img-fluid" alt="Uploaded Image">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>VGG16 Prediction:</h5>
+                        <p>{{ prediction_vgg16 }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>ResNet Prediction:</h5>
+                        <p>{{ prediction_resnet }}</p>
+                    </div>
+                </div>
+                <br>
+                <a href="{{ url_for('index') }}" class="btn btn-custom">Upload Another Image</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
