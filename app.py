@@ -8,7 +8,7 @@ from keras.models import load_model
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 
-model_vgg16 = load_model('models/model_vgg16.h5')
+model_vgg16 = load_model('Model_weights.h5')
 model_resnet = load_model('models/model_resnet.h5')
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
