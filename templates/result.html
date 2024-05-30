@@ -36,7 +36,7 @@
         <div class="card">
             <div class="card-body">
                 <h1 class="card-title">Hand Gesture Recognition Results</h1>
-                <p class="card-text">Here are the predictions for your uploaded image.</p>
+                <p class="card-text">Here is the prediction for your uploaded image.</p>
                 <div class="row">
                     <div class="col-md-6 offset-md-3">
                         <img src="{{ url_for('display_image', filename=filename) }}" class="img-fluid" alt="Uploaded Image">
@@ -44,13 +44,9 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-6">
-                        <h5>VGG16 Prediction:</h5>
-                        <p>{{ prediction_vgg16 }}</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>ResNet Prediction:</h5>
-                        <p>{{ prediction_resnet }}</p>
+                    <div class="col-md-12">
+                        <h5>Prediction:</h5>
+                        <p>{{ prediction }}</p>
                     </div>
                 </div>
                 <br>
