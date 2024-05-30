@@ -8,22 +8,21 @@ from keras.models import load_model
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 
-model_vgg16 = load_model('models/model_vgg16.h5')
+model_vgg16 = load_model('Final_Model.h5')
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
+from PIL import Image
+
 def preprocess_image(img_path):
-    img = image.load_img(img_path, target_size=(64, 64))
-    img_array = image.img_to_array(img)
-    img_array = np.expand_dims(img_array, axis=0)
+    img = Image.open(img_path).convert('L')  # Convert to grayscale
+    img = img.resize((64, 64))
+    img_array = np.expand_dims(np.array(img), axis=0)
     img_array = img_array.astype('float32') / 255.0
+    img_array = np.expand_dims(img_array, axis=-1)  # Expand dimensions to (1, 64, 64, 1)
     return img_array
 
-labels = [
-    '1', '10', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 
-    'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 
-    'W', 'X', 'Y', 'Z', 'best of luck', 'fuck you', 'i love you', 'space'
-]
+labels={0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z', 26: '1', 27: '2', 28: '3', 29:'4',30:'5',31:'6',32:'7',33:'8',34:'9',35:'10',36:'best of luck',37:'i love you',38:'space'}
 
 @app.route('/')
 def index():
