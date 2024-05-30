@@ -8,7 +8,7 @@ from keras.models import load_model
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 
-model_vgg16 = load_model('Final_Model.h5')
+model= load_model('Final_Model.h5')
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
@@ -42,14 +42,14 @@ def upload():
       
         img_array = preprocess_image(file_path)
         
-        prediction_vgg16 = model_vgg16.predict(img_array)
+        prediction = model.predict(img_array)
         
-        predicted_label_vgg16 = labels[np.argmax(prediction_vgg16)]
+        predicted_label = labels[np.argmax(prediction)]
     
         
         return render_template('result.html', 
                                filename=filename, 
-                               prediction_vgg16=predicted_label_vgg16)
+                               prediction=predicted_label)
 
 @app.route('/display/<filename>')
 def display_image(filename):
