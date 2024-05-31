@@ -136,7 +136,12 @@ predicted_label = labels[np.argmax(prediction)]
 
 ### Home Page
 
+![Screenshot 2024-05-31 125021](https://github.com/Rani1303/Gesture_Refactor_and_Integration/assets/103280525/80e3ef62-079a-4122-bdb3-e8083f507b61)
+
 ### Result Page
+
+![Screenshot 2024-05-31 170114](https://github.com/Rani1303/Gesture_Refactor_and_Integration/assets/103280525/140fbad9-11b6-4a1e-9f96-312dd95b20f0)
+
 
 ## Conclusion
 
