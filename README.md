@@ -78,7 +78,7 @@ Follow these steps to set up and run the project on your local machine:
 
 4. **Download the pre-trained model**
 
-    Ensure you have the `Final_Model.h5` file in the project directory. If not, download it from the Kaggle repository and place it in the project directory.
+    Ensure you have the `Final_Model.h5` file in the project directory. If not, download it from the github repository and place it in the project directory.
 
 ### Running the Application
 
