@@ -4,6 +4,7 @@ import os
 import numpy as np
 from keras.preprocessing import image
 from keras.models import load_model
+from PIL import Image
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads/'
@@ -11,8 +12,6 @@ app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 model= load_model('Final_Model.h5')
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-
-from PIL import Image
 
 def preprocess_image(img_path):
     img = Image.open(img_path).convert('L')
