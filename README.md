@@ -51,7 +51,7 @@ Follow these steps to set up and run the project on your local machine:
 
 ### Prerequisites
 
-- Python 3.6 or higher
+- Python 3.9 or higher
 - pip (Python package installer)
 
 ### Installation
