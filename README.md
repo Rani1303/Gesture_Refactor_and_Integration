@@ -7,6 +7,8 @@ This project demonstrates a simple Flask backend API that integrates a pre-train
 The repository used for the pre-trained gesture recognition model is from Kaggle, specifically [Sign Language Recognition using VGG16 and ResNet50](https://www.kaggle.com/code/rahulmakwana/sign-language-recognition-vgg16-resnet50). This repository was chosen based on several factors:
 
 - **Model Accuracy**: The models (VGG16 and ResNet50) are known for their high accuracy in image classification tasks, including gesture recognition.
+
+```
 VGG16:
 Accuracy for test images: 99.992 %
 Accuracy for evaluation images: 100.0 %
@@ -14,6 +16,8 @@ Accuracy for evaluation images: 100.0 %
 RESNET50:
 Accuracy for test images: 99.95 %
 Accuracy for evaluation images: 100.0 %
+
+```
 - **Documentation Quality**: The repository includes well-documented code with explanation, making it easier to understand and integrate into other projects.
 - **Ease of Integration**: The code is modular and provides clear instructions for loading and using the pre-trained models, which facilitates seamless integration into a Flask backend.
 
@@ -138,3 +142,6 @@ predicted_label = labels[np.argmax(prediction)]
 
 This project provides a simple and effective way to integrate a pre-trained gesture recognition model into a Flask web application. By following the instructions, you can set up the project locally and start recognizing ASL signs from images. The integration of the pre-trained model ensures high accuracy and ease of use, making it a practical solution for gesture recognition tasks.
 
+## License
+
+[MIT](LICENSE) © 2024 Rani
